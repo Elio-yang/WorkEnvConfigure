@@ -1,0 +1,14 @@
+#====================something about nvim install
+1. first you should install the latest nvim from website
+2. nodejs>12.12 is needed
+3. be careful of the ~/.bash_profile of nodejs
+4. when installing the plugins : if it can't be installed due to network reason
+	there is a way to solve that : just go to the dir  ~/.vim and git clone 
+	those plugins you want from github manually.
+5. also if you even can't get the Plug management ,go to the website and git clone
+	the .vim file to specified dir.
+6. some urls that might help when configure neovim(when got trouble go through these websites):
+	https://www.cnblogs.com/cniwoq/p/13272746.html
+	https://zhuanlan.zhihu.com/p/261297620
+
+
