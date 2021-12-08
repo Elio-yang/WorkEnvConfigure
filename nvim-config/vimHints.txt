@@ -1,0 +1,126 @@
+# this file provided some often used cmds by my self
+
+
+
+打开文件  		:e file
+左下上右 		hjkl
+水平分割并显示另一个文件 	:split file
+当前窗口垂直分割		:vsplit
+垂直分割出新窗口		:vne
+水平窗口大小调节		C+w +/- n
+垂直窗口大小调节		C+w </> n
+切换窗口 左下上右		C+w h/j/k/l
+
+w 下一个单词头
+e 上一个单词尾
+- 上一行第一个非空白字符
+( 前移一句
+{ 前移一段
+
+0 移动到行首
+^ 移动到本行第一个非空白字符
+$ 移动到行尾
+nG 到文件第n行
+:n<cr> 移动到第n行
+
+C+f 下翻一屏
+C+b 上翻一屏
+C+d 下翻半屏
+C+u 上翻半屏
+C+e 向下滚动一行
+C+y 向上滚动一行
+
+zz 当前行移动到屏幕中央
+zt 当前行移动到屏幕顶端
+zb 当前行移动到屏幕底端
+
+
+c[n]w 改光标后1(n)个词
+c[n]l 改光标后n个字母
+
+
+/something 在后面的文本中查找something
+?something 在前面的文本中查找something
+n 向后查找
+N 向前查找
+
+:s/old/new 	用new替换当前行的第一个old
+:s/old/new/g 	用new替换当前行的所有old
+:n1 n2s/old/new/g 	用new替换n1到n2行的所有old
+:%s/ols/new/g 	用new替换文件中所有的old
+:%s/^/xxx/g 	在每一行的行首插入xxx
+:%s/$/xxx/g  	在每一行的行尾插入xxx
+
+[range]g/pattern/command 匹配到某个模式后执行某种命令
+%g/^ xyz/normal dd
+关于range的规定为：
+如果不指定range，则表示当前行。
+m,n 	: 从m行到n行。
+0	: 最开始一行（可能是这样）。
+$	: 最后一行
+.	: 当前行
+%	: 所有行
+
+
+
+:set spell		开启拼写检查功能
+:set nospell	关闭拼写检查功能
+]s		移到下一个拼写错误的单词
+[s		作用与上一命令类似，但它是从相反方向进行搜索
+z=		显示一个有关拼写错误单词的列表，可从中选择
+zg		告诉拼写检查器该单词是拼写正确的
+zw		与上一命令相反，告诉拼写检查器该单词是拼写错误的
+
+
+:e ++enc=utf8 filename	让vim用utf-8的编码打开这个文件。
+:w ++enc=gbk		不管当前文件什么编码，把它转存成gbk编码。
+:set fenc或:set fileencoding	查看当前文件的编码。
+在vimrc中添加set fileencoding=ucs-bom,utf-8,cp936	vim会根据要打开的文件选择合适的编码。 注意：编码之间不要留空格。 cp936对应于gbk编码。 ucs-bom对应于windows下的文件格式。
+
+:e ++ff=dos filename	让vim用dos格式打开这个文件。
+:w ++ff=mac filename	以mac格式存储这个文件。
+:set ff			显示当前文件的格式。
+:set ff=format		设置格式
+在vimrc中添加set fileformats=unix,dos,mac，让vim自动识别文件格式。
+
+
+gd	跳转到局部变量的定义处；
+gD	跳转到全局变量的定义处，从当前文件开头开始搜索；
+g;	上一个修改过的地方；
+g,	下一个修改过的地方；
+[[	跳转到上一个函数块开始，需要有单独一行的{。
+]]	跳转到下一个函数块开始，需要有单独一行的{。
+[]	跳转到上一个函数块结束，需要有单独一行的}。
+][	跳转到下一个函数块结束，需要有单独一行的}。
+[{	跳转到当前块开始处；
+]}	跳转到当前块结束处；
+[/	跳转到当前注释块开始处；
+]/	跳转到当前注释块结束处；
+%	不仅能移动到匹配的(),{}或[]上，而且能在#if，#else， #endif之间跳跃。
+
+
+C-x C-s 		拼写建议。
+C-x C-v		补全vim选项和命令。
+C-x C-l 		整行补全。
+C-x C-f 		自动补全文件路径。弹出菜单后，按C-f循环选择，当然也可以按 C-n和C-p。
+C-x C-p 和C-x C-n 	用文档中出现过的单词补全当前的词。 直接按C-p和C-n也可以。
+C-x C-o 		编程时可以补全关键字和函数名啊。
+C-x C-i 		根据头文件内关键字补全。
+C-x C-d 		补全宏定义。
+C-x C-n 		按缓冲区中出现过的关键字补全。 直接按C-n或C-p即可。
+当弹出补全菜单后：
+C-p 向前切换成员；
+C-n 向后切换成员；
+C-e 退出下拉菜单，并退回到原来录入的文字；
+C-y 退出下拉菜单，并接受当前选项。
+
+函数，变量跳转
+apt-get install ctags
+ctags -R *
+C+] 跳转
+C+t 返回
+
+
+
+
+
